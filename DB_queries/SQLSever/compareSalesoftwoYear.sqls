@@ -1,0 +1,72 @@
+With
+
+Sales2011 as
+
+(Select *
+
+from
+
+(
+
+select count(*) as count,o.CustomerID, State,YEAR(OrderDate) as Year,sum(OrderAmount) as SumAmount
+
+from Customers c
+
+join Orders o
+
+on c.CustomerID =o.CustomerID
+
+group by o.CustomerID, [State],year(OrderDate)
+
+having sum(OrderAmount) > 1000
+
+)x
+
+where x.[Year]='2011'
+
+),
+
+
+
+Sales2010 as
+
+(Select *
+
+from
+
+(
+
+select count(*) as count,o.CustomerID, State,YEAR(OrderDate) as Year,sum(OrderAmount) as SumAmount
+
+from Customers c
+
+join Orders o
+
+on c.CustomerID =o.CustomerID
+
+group by o.CustomerID, [State],year(OrderDate)
+
+having sum(OrderAmount) > 1000
+
+)x
+
+where x.[Year]='2011'
+
+)
+
+
+
+Select * from Sales2010 a
+
+CROSS APPLY(
+
+Select * from Sales2011 b
+
+where a.CustomerID =b.CustomerID and abs(a.SumAmount-b.SumAmount)/a.SumAmount > 0.2
+
+
+
+) x
+
+
+
