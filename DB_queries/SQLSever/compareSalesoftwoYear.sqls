@@ -1,3 +1,12 @@
+/*
+
+However, a solution to the SQL question you through at me at the interview. ( where was sum of sales >1000 for in  2010 and 2011, to  return records of 2010 compared 2011 with drop in sales by 20%)
+
+The solution below works and should answers your question.. 
+
+See my GitHub repo for some of my work
+*/
+
 With
 
 Sales2011 as
