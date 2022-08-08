@@ -1,0 +1,7 @@
+
+jdbcDF = spark.read \
+        .format("com.microsoft.sqlserver.jdbc.spark") \
+        .option("url", url) \
+        .option("dbtable", table_name) \
+        .option("user", username) \
+        .option("password", password).load()

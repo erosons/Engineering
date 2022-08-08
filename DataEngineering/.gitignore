@@ -1,0 +1,4 @@
+
+*.DS_Store
+*.subdag.py.log
+*__pycache
