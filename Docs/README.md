@@ -1,4 +1,4 @@
-<h> CI-PROJECT- SETTING UP YOUR PYTHON CI (CONTINOUS INTEGRATION) PROJECT<h>
+#### CI-PROJECT- SETTING UP YOUR PYTHON CI (CONTINOUS INTEGRATION) PROJECT
 
 <body><p>This data ingestion Pipeline project extract data from multiples sources and writes
 into s3 buckets and then load the data in a Redshift datawarehouse or a snowflake datawharehouse
